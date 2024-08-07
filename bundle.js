@@ -12,10 +12,12 @@ function palindromeTester() {
   }
 }
 
-let button = document.querySelector("#palindromeTester");
-button.addEventListener("click", function() {
-  palindromeTester();
-})
+document.addEventListener("DOMContentLoaded", function () {
+  let button = document.querySelector("#palindromeTester");
+  button.addEventListener("click", function () {
+    palindromeTester();
+  });
+});
 },{"tenparsent-palindrome":2}],2:[function(require,module,exports){
 module.exports = Phrase;
 
