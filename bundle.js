@@ -1,16 +1,21 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 let Phrase = require("tenparsent-palindrome");
 
-let string = prompt("パリンドロームをテストしたい文字列を入力してください:");
+function palindromeTester() {
+  let string = prompt("パリンドロームをテストしたい文字列を入力してください:");
+  let phrase = new Phrase(string);
 
-let phrase = new Phrase(string);
-
-if(phrase.palindrome()){
-    alert(`"${phrase.content}"はパリンドロームです`);
-} else {
+  if (phrase.palindrome()) {
+    alert(`"${phrase.content}"はパリンドロームです！`);
+  } else {
     alert(`"${phrase.content}"はパリンドロームではありません`)
+  }
 }
 
+let button = document.querySelector("#palindromeTester");
+button.addEventListener("click", function() {
+  palindromeTester();
+})
 },{"tenparsent-palindrome":2}],2:[function(require,module,exports){
 module.exports = Phrase;
 
